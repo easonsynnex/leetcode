@@ -1,4 +1,4 @@
-package com.eason.leetcode.leetcode0035;
+package com.eason.leetcode.array.leetcode0035;
 
 
 public class Solution {

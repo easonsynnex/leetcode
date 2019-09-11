@@ -1,4 +1,4 @@
-package com.eason.leetcode.leetcode0121;
+package com.eason.leetcode.array.leetcode0121;
 
 public class Solution {
     public int maxProfit(int[] prices) {

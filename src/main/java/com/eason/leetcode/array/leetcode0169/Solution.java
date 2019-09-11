@@ -1,4 +1,4 @@
-package com.eason.leetcode.leetcode0169;
+package com.eason.leetcode.array.leetcode0169;
 
 public class Solution {
     public int majorityElement(int[] nums) {

@@ -1,4 +1,4 @@
-package com.eason.leetcode.leetcode0001;
+package com.eason.leetcode.array.leetcode0001;
 
 import java.util.Arrays;
 import java.util.HashMap;

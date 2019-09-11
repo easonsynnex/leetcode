@@ -1,4 +1,4 @@
-package com.eason.leetcode.leetcode0027;
+package com.eason.leetcode.array.leetcode0027;
 
 import java.util.Arrays;
 
