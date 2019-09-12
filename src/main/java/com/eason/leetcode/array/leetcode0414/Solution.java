@@ -1,7 +1,5 @@
 package com.eason.leetcode.array.leetcode0414;
 
-import java.net.Socket;
-import java.util.Arrays;
 
 public class Solution {
     public int thirdMax(int[] nums) {
