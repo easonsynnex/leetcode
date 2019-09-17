@@ -1,6 +1,14 @@
 package com.eason.leetcode.array.leetcode0414;
 
 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 public class Solution {
     public int thirdMax(int[] nums) {
         long max1 = Long.MIN_VALUE;
@@ -26,5 +34,24 @@ public class Solution {
         int[] nums = {2,2,3,1};
         Solution solution = new Solution();
         System.out.println(solution.thirdMax(nums));
+        Set<Integer> set = new HashSet<>();
+
+        ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+        service.scheduleAtFixedRate(new myRunnable(), 0, 5, TimeUnit.SECONDS);
     }
+    static class myRunnable implements Runnable{
+
+        @Override
+        public void run() {
+            try {
+                System.out.println(System.currentTimeMillis());
+                int[] arr = {1,2};
+                System.out.println(arr[3]);
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+
 }
