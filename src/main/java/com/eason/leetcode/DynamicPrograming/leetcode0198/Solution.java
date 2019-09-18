@@ -11,8 +11,11 @@ class Solution {
         if(nums.length == 2){
             return nums[0] > nums[1] ? nums[0]:nums[1];
         }
+        //保存第i-2天能偷窃到的最大金额
         int pre = nums[0];
+        //保存第i-1天能偷窃到的最大金额
         int current = nums[0] > nums[1] ? nums[0]:nums[1];
+        //保存到第i号能偷窃到的最大金额
         int sum = 0;
         for(int i=2;i<nums.length;i++){
             sum = Math.max(nums[i] + pre,current);
