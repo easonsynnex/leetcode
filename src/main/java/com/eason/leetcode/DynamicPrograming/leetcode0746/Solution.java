@@ -1,5 +1,8 @@
 package com.eason.leetcode.DynamicPrograming.leetcode0746;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution {
     /**
      * 空间利用率最高的算法,当前阶梯的最优解F(i)只与F(i-1)和F(i-2)有关，所以只保存F(i),F(i-1),F(i-2)这3个结果
@@ -42,10 +45,40 @@ class Solution {
         }
         return Math.min(dp[cost.length - 1],dp[cost.length - 2]);
     }
-
+    public int maxNumberOfBalloons(String text) {
+        int result = 0;
+        Map<Character,Integer> total = new HashMap<>(text.length()/7);
+        for(int i=0;i<text.length();i++){
+            if(text.charAt(i)=='b'
+                    || text.charAt(i)=='a'
+                    || text.charAt(i)=='l'
+                    || text.charAt(i)=='o'
+                    || text.charAt(i)=='n'){
+                int value = total.get(text.charAt(i)) == null ?0:total.get(text.charAt(i));
+                total.put(text.charAt(i),value+1);
+            }
+        }
+        total.put('l',(total.get('l')==null ? 0 :total.get('l')) / 2);
+        total.put('o',(total.get('o')==null ? 0 :total.get('o')) / 2);
+        if(total.size()!=5)
+            return 0;
+        for(Map.Entry<Character,Integer> entry:total.entrySet()){
+            if(result == 0){
+                result = entry.getValue();
+            }
+            if(result == 0)
+                return 0;
+            int value = entry.getValue()==null?0:entry.getValue();
+            result = value > result ?result:value;
+        }
+        System.out.println(result);
+        int[] n = new int[2];
+        n['a'] = 1;
+        return result;
+    }
     public static void main(String[] args) {
-        int [] nums = {0,0,0,1};
+        String a = "lloo";
         Solution solution = new Solution();
-        System.out.println(solution.minCostClimbingStairs(nums));
+        solution.maxNumberOfBalloons(a);
     }
 }
